@@ -1,9 +1,4 @@
 
-  # card_number = "4929735477250543"
-  #
-  #  valid = false
-
-   #Your Luhn Algorithm Here
   class CreditCheck
     attr_reader :card_num
 
@@ -20,8 +15,6 @@
     def square_odd
       # squares every other number starting from the right with the reversed
       reverse_split.map.with_index {|num, i| i.even? ? num : num * 2}
-
-
     end
 
     def over_ten_sum
@@ -39,7 +32,7 @@
       #sums the array
       over_ten_sum.reduce(:+)
     end
-# binding.pry
+
     def validate
       #validates the number if divisible by 10
       if summed_number % 10 == 0
@@ -50,8 +43,6 @@
     end
   end
 
- #   #Output
- #   If it is valid, print "The number is valid!"
- #   If it is invalid, print "The number is invalid!
- new_num = CreditCheck.new("5101823508024124")
+
+ new_num = CreditCheck.new("4929735477250543")
  p new_num.validate
